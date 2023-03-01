@@ -67,7 +67,7 @@ export const Events = ({ filterValue, setFilterValue, searchValue }) => {
     <div className="boss-parent">
       <div className="events-main">
         {filterData
-          .sort((a, b) => a.datetime < b.datetime)
+          .sort((a, b) => new Date(a.datetime) > new Date(b.datetime))
           .map((item) => {
             return (
               <EventCard
