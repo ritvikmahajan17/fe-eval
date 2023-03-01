@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@700&display=swap');
+.eventcard-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sofia Sans';
+    border: 1px solid black;
+    border-radius: 5px;
+    width:300px;
+    color:white;
+    background-color: black;
+    padding:10px;
+}
+
+.eventcard-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    /* background-color:black; */
+    width: 100%;
+    
+}
+
+
+
+#main-img {
+    height: 200px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.eventcard-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:10px;
+    width: 100%;
+}
+
+.eventcard-name {
+    font-family: "Big Shoulders Text";
+    /* text-align: center; */
+    
+}
+
+.eventcard-icons {
+    display: flex;
+    width: 100%;
+   justify-content: space-between;
+   align-items: center;
+}
+
+#hr-line {
+    background-color: white;
+    color: white;
+    height: 5px;
+}
+
+.eventcard-description{
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.eventcard-icons-solo{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; 
+    width:100%;
+}
+
+.icon-register {
+    color: #A0F3AD;
+    display: flex;
+    gap:5px;
+}
+
+.icon-seats {
+    color: #ECECAB;
+    display: flex;
+    gap:5px;
+}
+
+.fa-bookmark{
+    color: #EA8282;
+}
+
+.icon {
+    cursor: pointer;
+}

@@ -35,21 +35,21 @@ export const Filter = () => {
           <div className="filter-container">
             <div className="options">
               <div className="single-option">
-                <input type="radio" />
+                <input type="radio" name="fav_language" />
                 <label>ALL</label>
               </div>
               <div className="single-option">
-                <input type="radio" />
+                <input type="radio" name="fav_language" />
                 <label>REGISTERED</label>
               </div>
             </div>
             <div className="options">
               <div className="single-option">
-                <input type="radio" />
+                <input type="radio" name="fav_language" />
                 <label>BOOKMARKED</label>
               </div>
               <div className="single-option">
-                <input type="radio" />
+                <input type="radio" name="fav_language" />
                 <label>SEATS AVAILABLE</label>
               </div>
             </div>

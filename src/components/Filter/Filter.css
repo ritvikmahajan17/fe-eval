@@ -6,6 +6,7 @@
     padding-left:200px;
     padding-right:200px;
     padding-top:50px;
+    font-family: 'Sofia Sans';
 }
 .filter-main {
     display: flex;
@@ -19,7 +20,7 @@
 }
 
 .filter-logo {
-    font-family: 'Sofia Sans';
+   
     font-size: large;
     display: flex;
     gap:5px;

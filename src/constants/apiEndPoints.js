@@ -1,17 +1,17 @@
-export const BACKEND_URL = 'http://localhost:8080/api/';
+export const BACKEND_URL = 'http://localhost:8000/api/';
 //TODO:Change Backend URL
 
-// export const GET_SONG_DATA = {
-//   url:'records',
-//   method:'get'
-// };
+export const GET_EVENTS_DATA = {
+  url:'events',
+  method:'get'
+};
 
-// export const GET_SONG_LIKE_BY_ID = (id) => ({
-//   url:`records/${id}/likes`,
-//   method:'get'
-// });
+export const GET_EVENT_BY_ID = (id) => ({
+  url:`events/${id}`,
+  method:'get'
+});
 
-// export const UPDATE_SONG_LIKE_BY_ID = (id) => ({
-//   url:`records/${id}/likes`,
-//   method:'patch'
-// });
+export const UPDATE_EVENT_BOOKMARK_BY_ID = (id) => ({
+  url:`events/${id}`,
+  method:'patch'
+});

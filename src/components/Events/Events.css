@@ -1,0 +1,11 @@
+.events-main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-left:200px;
+    padding-right:200px;
+    /* margin-left: 200px; */
+    padding-top:50px;
+    gap:40px;
+    /* background-color: #000000; */
+}
