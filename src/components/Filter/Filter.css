@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap');
+
+.filter-parent{
+    display: flex;
+    flex-direction: column;
+    padding-left:200px;
+    padding-right:200px;
+    padding-top:50px;
+}
+.filter-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.filter-options {
+    padding-top:10px;
+}
+
+.filter-logo {
+    font-family: 'Sofia Sans';
+    font-size: large;
+    display: flex;
+    gap:5px;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.options{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-bar {
+    display: flex;
+    gap:5px;
+}
+
+.bar {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 30px;
+    width: 300px;
+}
+
+#mag-icon {
+    height: 30px;
+    width: 30px;
+}
+
+#filter-btn {
+    border: none;
+    
+}
+
+#search-btn {
+    border: none;
+}
