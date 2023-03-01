@@ -31,4 +31,7 @@ export const  getTimezone=(timezone)=>{
     return 'CT';
   else if(timezone==='US/Eastern')
     return 'EST';
+  else{
+    return '';
+  }
 }; 

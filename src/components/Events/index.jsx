@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import makeRequest from '../../utils/makeRequest';
 import { EventCard } from '../EventCard';
 import './Events.css';
+import { Footer } from '../Footer';
 
 export const Events = ({ filterValue, setFilterValue, searchValue }) => {
   const [data, setData] = useState([]);
@@ -63,27 +64,30 @@ export const Events = ({ filterValue, setFilterValue, searchValue }) => {
   //   console.log(data, 'data');
 
   return (
-    <div className="events-main">
-      {filterData
-        .sort((a, b) => a.datetime < b.datetime)
-        .map((item) => {
-          return (
-            <EventCard
-              key={item.id}
-              id={item.id}
-              name={item.name}
-              desc={item.description}
-              venue={item.venue}
-              datetime={item.datetime}
-              timezone={item.timezone}
-              seatsAvailable={item.areSeatsAvailable}
-              isRegistered={item.isRegistered}
-              isBookmarked={item.isBookmarked}
-              imgUrl={item.imgUrl}
-              size="small"
-            />
-          );
-        })}
+    <div className="boss-parent">
+      <div className="events-main">
+        {filterData
+          .sort((a, b) => a.datetime < b.datetime)
+          .map((item) => {
+            return (
+              <EventCard
+                key={item.id}
+                id={item.id}
+                name={item.name}
+                desc={item.description}
+                venue={item.venue}
+                datetime={item.datetime}
+                timezone={item.timezone}
+                seatsAvailable={item.areSeatsAvailable}
+                isRegistered={item.isRegistered}
+                isBookmarked={item.isBookmarked}
+                imgUrl={item.imgUrl}
+                size="small"
+              />
+            );
+          })}
+      </div>
+      <Footer />
     </div>
   );
 };

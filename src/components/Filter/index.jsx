@@ -36,7 +36,11 @@ export const Filter = ({ setFilterValue, setSearchValue }) => {
           <FontAwesomeIcon icon={faFilter} />
           <a>FILTER</a>
           <button id="filter-btn" onClick={handleFilterClick}>
-            <FontAwesomeIcon icon={faChevronUp} />
+            {filter ? (
+              <FontAwesomeIcon icon={faChevronUp} />
+            ) : (
+              <i className="fa-solid fa-chevron-down"></i>
+            )}
           </button>
         </div>
         <div className="search-bar">

@@ -4,8 +4,15 @@
     justify-content: space-between;
     padding-left:200px;
     padding-right:200px;
+    /* height: 100px; */
     /* margin-left: 200px; */
     padding-top:50px;
     gap:40px;
     /* background-color: #000000; */
+}
+
+.boss-parent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
