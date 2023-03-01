@@ -2,8 +2,7 @@ export const getFormattedDateFromUtcDate = (utcDate) => {
   const date = new Date(utcDate);
   return `${date.getDate()}
         ${monthNames[date.getMonth()]},
-        ${date.getFullYear()}  ${date.getUTCHours()} : ${date.getUTCMinutes()}
-        // ${date.getUTCHours()>12 ? 'PM' : 'AM'  }`;
+        ${date.getFullYear()}  ${date.getUTCHours()} : ${date.getUTCMinutes()}`;
 };
 
 export function convertTZ(date, tzString) {
@@ -24,3 +23,12 @@ export const monthNames = [
   'November',
   'December',
 ];
+
+export const  getTimezone=(timezone)=>{
+  if(timezone==='America/Los_Angeles')
+    return 'PST';
+  else if(timezone==='US/Central')
+    return 'CT';
+  else if(timezone==='US/Eastern')
+    return 'EST';
+}; 

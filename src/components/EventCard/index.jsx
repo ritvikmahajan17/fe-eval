@@ -8,7 +8,11 @@ import {
   faCircleXmark,
 } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
-import { convertTZ, getFormattedDateFromUtcDate } from '../../utils/common';
+import {
+  convertTZ,
+  getFormattedDateFromUtcDate,
+  getTimezone,
+} from '../../utils/common';
 import makeRequest from '../../utils/makeRequest';
 import { UPDATE_EVENT_BOOKMARK_BY_ID } from '../../constants/apiEndPoints';
 import { useNavigate } from 'react-router-dom';
@@ -61,7 +65,10 @@ export const EventCard = ({
         <div className="eventcard-venue">
           <div className="eventcard-name">VENUE:{venue}</div>
           <div className="eventcard-description">
-            DATE:{getFormattedDateFromUtcDate(datetime)}
+            DATE:
+            {`${getFormattedDateFromUtcDate(datetime)} ${getTimezone(
+              timezone
+            )}`}
             {/* {console.log(convertTZ(datetime, timezone).toString())} */}
           </div>
         </div>

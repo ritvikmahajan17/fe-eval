@@ -65,11 +65,7 @@ export const Events = ({ filterValue, setFilterValue, searchValue }) => {
   return (
     <div className="events-main">
       {filterData
-        // .sort(
-        //   (a, b) =>
-        //     convertTZ(a.datetime, a.timezone) >
-        //     convertTZ(b.datetime, b.timezone)
-        // )
+        .sort((a, b) => a.datetime < b.datetime)
         .map((item) => {
           return (
             <EventCard

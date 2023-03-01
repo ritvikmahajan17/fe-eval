@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { EventCard, Header } from '../../components';
+import { EventCard, Footer, Header } from '../../components';
 import { GET_EVENT_BY_ID } from '../../constants/apiEndPoints';
 import makeRequest from '../../utils/makeRequest';
 import './Cardpage.css';
@@ -47,6 +47,7 @@ export const Cardpage = () => {
           size="large"
         />
       </div>
+      <Footer />
     </div>
   );
 };
