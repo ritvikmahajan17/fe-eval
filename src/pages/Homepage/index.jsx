@@ -4,11 +4,16 @@ import './Homepage.css';
 
 export const Homepage = () => {
   const [filterValue, setFilterValue] = useState('ALL');
+  const [searchValue, setSearchValue] = useState('');
   return (
     <div>
       <Header />
-      <Filter setFilterValue={setFilterValue} />
-      <Events filterValue={filterValue} />
+      <Filter setFilterValue={setFilterValue} setSearchValue={setSearchValue} />
+      <Events
+        filterValue={filterValue}
+        setFilterValue={setFilterValue}
+        searchValue={searchValue}
+      />
     </div>
   );
 };

@@ -8,18 +8,20 @@ import makeRequest from '../../utils/makeRequest';
 import { EventCard } from '../EventCard';
 import './Events.css';
 
-export const Events = ({ filterValue }) => {
+export const Events = ({ filterValue, setFilterValue, searchValue }) => {
   const [data, setData] = useState([]);
   const [error, setError] = useState();
   const [filterData, setFilterData] = useState([]);
   const navigate = useNavigate();
 
   console.log(filterValue, 'filterValue');
+  console.log(searchValue, 'searchValue');
 
   useEffect(() => {
     makeRequest(GET_EVENTS_DATA)
       .then((res) => {
         setData(res);
+        setFilterData(res);
       })
       .catch((err) => {
         setError(err);
@@ -45,6 +47,18 @@ export const Events = ({ filterValue }) => {
       setFilterData(data.filter((item) => item.areSeatsAvailable === true));
     }
   }, [filterValue]);
+
+  useEffect(() => {
+    if (searchValue === '') {
+      setFilterData(data);
+    } else {
+      setFilterData(
+        data.filter((item) => {
+          return item.name.toLowerCase().includes(searchValue.toLowerCase());
+        })
+      );
+    }
+  }, [searchValue]);
 
   //   console.log(data, 'data');
 
@@ -80,4 +94,6 @@ export const Events = ({ filterValue }) => {
 
 Events.propTypes = {
   filterValue: PropTypes.string,
+  setFilterValue: PropTypes.func,
+  searchValue: PropTypes.string,
 };

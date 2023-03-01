@@ -8,8 +8,9 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import PropTypes from 'prop-types';
 
-export const Filter = ({ setFilterValue }) => {
+export const Filter = ({ setFilterValue, setSearchValue }) => {
   const [filter, setFilter] = useState(false);
+  const [input, setInput] = useState('');
 
   //   const [filterValue, setFilterValue] = useState('ALL');
 
@@ -19,6 +20,14 @@ export const Filter = ({ setFilterValue }) => {
 
   const handleRadioClick = (e) => {
     setFilterValue(e.target.value);
+  };
+
+  const handleChange = (e) => {
+    setInput(e.target.value);
+  };
+
+  const handleSearch = () => {
+    setSearchValue(input);
   };
   return (
     <div className="filter-parent">
@@ -31,8 +40,8 @@ export const Filter = ({ setFilterValue }) => {
           </button>
         </div>
         <div className="search-bar">
-          <input className="bar" type="text" />
-          <button id="search-btn">
+          <input onChange={handleChange} className="bar" type="text" />
+          <button onClick={handleSearch} id="search-btn">
             <FontAwesomeIcon id="mag-icon" icon={faMagnifyingGlass} />
           </button>
         </div>
@@ -90,4 +99,5 @@ export const Filter = ({ setFilterValue }) => {
 
 Filter.propTypes = {
   setFilterValue: PropTypes.func.isRequired,
+  setSearchValue: PropTypes.func.isRequired,
 };
