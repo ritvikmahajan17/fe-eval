@@ -44,6 +44,7 @@ export const Cardpage = () => {
           isRegistered={cardData.isRegistered}
           isBookmarked={cardData.isBookmarked}
           imgUrl={cardData.imgUrl}
+          size="large"
         />
       </div>
     </div>

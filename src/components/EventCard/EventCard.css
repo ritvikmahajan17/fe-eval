@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Text:wght@700&display=swap');
-.eventcard-main {
+.eventcard-main-large {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sofia Sans';
+    border: 1px solid black;
+    border-radius: 5px;
+    width:400px;
+    height:550px;
+    color:white;
+    background-color: black;
+    padding:10px;
+}
+
+.eventcard-main-small {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,6 +26,7 @@
     color:white;
     background-color: black;
     padding:10px;
+    cursor: pointer;
 }
 
 .eventcard-content {
@@ -26,10 +42,17 @@
 
 
 
-#main-img {
+#main-img-small {
     height: 200px;
     width: 300px;
     border-radius: 5px;
+}
+
+#main-img-large {
+    height: 100%;
+    width: 100%;
+    border-radius: 5px;
+    /* margin-bottom: 10px; */
 }
 
 .eventcard-details{
@@ -42,6 +65,7 @@
 }
 
 .eventcard-name {
+    padding-top: 5px;
     font-family: "Big Shoulders Text";
     /* text-align: center; */
     
@@ -91,5 +115,16 @@
 }
 
 .icon {
+    cursor: pointer;
+}
+
+#register-btn {
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
     cursor: pointer;
 }

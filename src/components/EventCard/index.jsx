@@ -24,8 +24,10 @@ export const EventCard = ({
   isRegistered,
   isBookmarked,
   imgUrl,
+  size,
 }) => {
   const [isBookmark, setIsBookmark] = useState(isBookmarked);
+  const [isRegister, setIsRegister] = useState(isRegistered);
   const navigate = useNavigate();
 
   const handleBookmarkClick = async () => {
@@ -35,14 +37,21 @@ export const EventCard = ({
     setIsBookmark(!isBookmark);
   };
 
+  const handleRegisterClick = async () => {
+    await makeRequest(UPDATE_EVENT_BOOKMARK_BY_ID(id), {
+      data: { isRegister: !isRegister },
+    });
+    setIsRegister(!isRegister);
+  };
+
   const handleCardClick = () => {
     navigate(`/events/${id}`);
   };
 
   return (
-    <div onClick={handleCardClick} className="eventcard-main">
+    <div onClick={handleCardClick} className={`eventcard-main-${size}`}>
       <div className="eventcard-image">
-        <img src={imgUrl} id="main-img" alt="event" />
+        <img src={imgUrl} id={`main-img-${size}`} alt="event" />
       </div>
       <div className="eventcard-content">
         <div className="eventcard-details">
@@ -56,7 +65,7 @@ export const EventCard = ({
             {/* {console.log(convertTZ(datetime, timezone).toString())} */}
           </div>
         </div>
-        {isRegistered && (
+        {isRegister && (
           <div className="eventcard-icons">
             <div className="icon-register">
               <FontAwesomeIcon icon={faCircleCheck} color="#A0F3AD" />
@@ -90,7 +99,7 @@ export const EventCard = ({
             )}
           </div>
         )}
-        {!isRegistered && seatsAvailable && (
+        {!isRegister && seatsAvailable && (
           <div className="eventcard-icons-solo">
             {isBookmark ? (
               <div onClick={handleBookmarkClick} className="icon">
@@ -104,6 +113,17 @@ export const EventCard = ({
           </div>
         )}
       </div>
+      {size === 'large' &&
+        seatsAvailable &&
+        (!isRegister ? (
+          <button onClick={handleRegisterClick} id="register-btn">
+            REGISTER
+          </button>
+        ) : (
+          <button onClick={handleRegisterClick} id="register-btn">
+            UNREGISTER
+          </button>
+        ))}
     </div>
   );
 };
@@ -119,4 +139,5 @@ EventCard.propTypes = {
   isRegistered: PropTypes.bool.isRequired,
   isBookmarked: PropTypes.bool.isRequired,
   imgUrl: PropTypes.string.isRequired,
+  size: PropTypes.string.isRequired,
 };

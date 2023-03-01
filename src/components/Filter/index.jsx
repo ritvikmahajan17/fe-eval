@@ -6,12 +6,19 @@ import {
   faFilter,
   faChevronUp,
 } from '@fortawesome/free-solid-svg-icons';
+import PropTypes from 'prop-types';
 
-export const Filter = () => {
+export const Filter = ({ setFilterValue }) => {
   const [filter, setFilter] = useState(false);
+
+  //   const [filterValue, setFilterValue] = useState('ALL');
 
   const handleFilterClick = () => {
     setFilter(!filter);
+  };
+
+  const handleRadioClick = (e) => {
+    setFilterValue(e.target.value);
   };
   return (
     <div className="filter-parent">
@@ -35,21 +42,42 @@ export const Filter = () => {
           <div className="filter-container">
             <div className="options">
               <div className="single-option">
-                <input type="radio" name="fav_language" />
+                <input
+                  type="radio"
+                  name="fav_language"
+                  value="ALL"
+                  onClick={handleRadioClick}
+                  defaultChecked
+                />
                 <label>ALL</label>
               </div>
               <div className="single-option">
-                <input type="radio" name="fav_language" />
+                <input
+                  type="radio"
+                  name="fav_language"
+                  value="REGISTERED"
+                  onClick={handleRadioClick}
+                />
                 <label>REGISTERED</label>
               </div>
             </div>
             <div className="options">
               <div className="single-option">
-                <input type="radio" name="fav_language" />
+                <input
+                  type="radio"
+                  name="fav_language"
+                  value="BOOKMARKED"
+                  onClick={handleRadioClick}
+                />
                 <label>BOOKMARKED</label>
               </div>
               <div className="single-option">
-                <input type="radio" name="fav_language" />
+                <input
+                  type="radio"
+                  name="fav_language"
+                  value="SEATS-AVAILABLE"
+                  onClick={handleRadioClick}
+                />
                 <label>SEATS AVAILABLE</label>
               </div>
             </div>
@@ -58,4 +86,8 @@ export const Filter = () => {
       )}
     </div>
   );
+};
+
+Filter.propTypes = {
+  setFilterValue: PropTypes.func.isRequired,
 };
