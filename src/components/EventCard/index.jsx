@@ -43,7 +43,7 @@ export const EventCard = ({
 
   const handleRegisterClick = async () => {
     await makeRequest(UPDATE_EVENT_BOOKMARK_BY_ID(id), {
-      data: { isRegister: !isRegister },
+      data: { isRegistered: !isRegister },
     });
     setIsRegister(!isRegister);
   };

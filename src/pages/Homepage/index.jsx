@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { Events, Filter, Header } from '../../components';
+import { Events, Filter, Footer, Header } from '../../components';
 import './Homepage.css';
 
 export const Homepage = () => {
@@ -14,6 +15,7 @@ export const Homepage = () => {
         setFilterValue={setFilterValue}
         searchValue={searchValue}
       />
+      {/* <Footer /> */}
     </div>
   );
 };
